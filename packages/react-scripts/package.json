@@ -1,14 +1,14 @@
 {
-  "name": "react-scripts",
+  "name": "react-scripts-rust",
   "version": "1.1.0",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "facebook/create-react-app",
+  "description": "Configuration and scripts for using Rust with Create React App",
+  "repository": "thomashorrobin/create-react-app-rust",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/thomashorrobin/create-react-app-rust/issues"
   },
   "files": [
     "bin",
