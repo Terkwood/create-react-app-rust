@@ -1,6 +1,6 @@
 {
   "name": "react-scripts-rust",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Configuration and scripts for using Rust with Create React App",
   "repository": "thomashorrobin/create-react-app-rust",
   "license": "MIT",
