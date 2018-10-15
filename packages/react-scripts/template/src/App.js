@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import loadAdd from './lib.rs';
 
 class App extends Component {
+  constructor() {
+    super();
+    loadAdd().then(result => {
+      const addtwo = result.instance.exports['addtwo'];
+      alert(`return value was ${addtwo(2)}`);
+    });
+  }
   render() {
     return (
       <div className="App">
