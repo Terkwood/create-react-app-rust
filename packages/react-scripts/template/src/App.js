@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import loadAdd from './lib.rs';
 
 class App extends Component {
   constructor() {
     super();
-    loadAdd().then(result => {
-      const addtwo = result.instance.exports['addtwo'];
-      alert(`return value was ${addtwo(2)}`);
-    });
+    switch (process.env.NODE_ENV) {
+      case 'production':
+        fetch('app.wasm')
+          .then(response => response.arrayBuffer())
+          .then(bytes => WebAssembly.instantiate(bytes, {}))
+          .then(result => {
+            const addtwo = result.instance.exports['addtwo'];
+            alert(`return value was ${addtwo(3)}`);
+          });
+        break;
+      case 'development':
+        import loadAdd from './lib.rs';
+        loadAdd().then(result => {
+          const addtwo = result.instance.exports['addtwo'];
+          alert(`return value was ${addtwo(2)}`);
+        });
+        break;
+      default:
+        break;
+    }
   }
   render() {
     return (
