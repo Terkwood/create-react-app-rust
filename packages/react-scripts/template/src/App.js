@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import loadAdd from './lib.rs';
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,6 @@ class App extends Component {
           });
         break;
       case 'development':
-        import loadAdd from './lib.rs';
         loadAdd().then(result => {
           const addtwo = result.instance.exports['addtwo'];
           alert(`return value was ${addtwo(2)}`);
