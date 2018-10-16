@@ -1,14 +1,14 @@
 {
-  "name": "react-scripts",
-  "version": "2.0.5",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "facebook/create-react-app",
+  "name": "react-scripts-rust",
+  "version": "2.0.0",
+  "description": "Configuration and scripts for using Rust with Create React App",
+  "repository": "thomashorrobin/create-react-app-rust",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/thomashorrobin/create-react-app-rust/issues"
   },
   "files": [
     "bin",
@@ -66,9 +66,7 @@
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.9",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.2",
-    "rust-native-wasm-loader": "^0.8.1",
-    "wasm-loader": "^1.3.0"
+    "workbox-webpack-plugin": "3.6.2"
   },
   "devDependencies": {
     "react": "^16.3.2",
