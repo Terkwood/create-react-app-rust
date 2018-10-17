@@ -13,5 +13,19 @@ module.exports = {
         'Remove-File ./public/app.big.wasm'
       );
     }
-  }
+  },
+  isRustInstalled: () => {
+    try {
+      execSync('rustup -v');
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+  installRustWebAssemblyTools: () => {
+    execSync('rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly && cargo install --force --git https://github.com/alexcrichton/wasm-gc');
+  },
+  installRust: () => {
+    execSync('curl https://sh.rustup.rs -sSf | sh');
+  },
 }

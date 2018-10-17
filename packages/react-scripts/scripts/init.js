@@ -197,6 +197,14 @@ module.exports = function(
     console.log('Initialized a git repository.');
   }
 
+  const rustUtils = require('./utils/rustUtils');
+
+  if (!rustUtils.isRustInstalled()) {
+    rustUtils.installRust();
+  }
+
+  rustUtils.installRustWebAssemblyTools();
+
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
   // backward compatibility with old global-cli's.
