@@ -62,8 +62,8 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 const argv = process.argv.slice(2);
 const writeStatsJson = argv.indexOf('--stats') !== -1;
 
-const compileRust = require('./utils/rustUtils');
-compileRust();
+const rustUtils = require('./utils/rustUtils');
+rustUtils.build();
 
 // We require that you explictly set browsers and do not fall back to
 // browserslist defaults.
