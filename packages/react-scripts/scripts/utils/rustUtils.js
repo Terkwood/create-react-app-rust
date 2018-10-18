@@ -1,6 +1,6 @@
 const execSync = require('child_process').execSync;
 
-module.exports = { 
+module.exports = {
   build: () => {
     // first build app.big.wasm and then optimize to app.wasm with wasm-gc
     try {
@@ -9,9 +9,7 @@ module.exports = {
       );
     } catch (error) {
       // on Windoze sometimes 'rm' is not reliable. if it fails try with this
-      execSync(
-        'Remove-File ./public/app.big.wasm'
-      );
+      execSync('Remove-File ./public/app.big.wasm');
     }
   },
   isRustInstalled: () => {
@@ -23,9 +21,8 @@ module.exports = {
     }
   },
   installRustWebAssemblyTools: () => {
-    execSync('rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly && cargo install --force --git https://github.com/alexcrichton/wasm-gc');
+    execSync(
+      'rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly && cargo install --force --git https://github.com/alexcrichton/wasm-gc'
+    );
   },
-  installRust: () => {
-    execSync('curl https://sh.rustup.rs -sSf | sh');
-  },
-}
+};
