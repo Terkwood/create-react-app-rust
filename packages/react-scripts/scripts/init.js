@@ -200,8 +200,11 @@ module.exports = function(
   const rustUtils = require('./utils/rustUtils');
 
   if (!rustUtils.isRustInstalled()) {
-    console.error(
-      'please install rust https://www.rust-lang.org/en-US/install.html'
+    console.log(
+      chalk.bold.red('rust not installed')
+    );
+    console.log(
+      'install rust from here https://www.rust-lang.org/en-US/install.html'
     );
     return;
   }
