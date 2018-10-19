@@ -14,7 +14,7 @@ module.exports = {
   },
   isRustInstalled: () => {
     try {
-      execSync('rustup -v');
+      execSync('rustup show');
       return true;
     } catch (error) {
       return false;
