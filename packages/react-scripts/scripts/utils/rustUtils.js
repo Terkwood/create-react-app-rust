@@ -7,10 +7,7 @@ module.exports = {
       execSync(
         'rustc +nightly --target wasm32-unknown-unknown -O --crate-type=cdylib src/App.rs -o public/app.big.wasm && wasm-gc public/app.big.wasm public/app.wasm && rm public/app.big.wasm'
       );
-    } catch (error) {
-      // on Windoze sometimes 'rm' is not reliable. if it fails try with this
-      execSync('Remove-File ./public/app.big.wasm');
-    }
+    } catch (error) {}
   },
   isRustInstalled: () => {
     try {
