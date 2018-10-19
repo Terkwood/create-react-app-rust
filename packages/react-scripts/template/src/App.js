@@ -12,14 +12,14 @@ class App extends Component {
           .then(response => response.arrayBuffer())
           .then(bytes => WebAssembly.instantiate(bytes, {}))
           .then(result => {
-            const addtwo = result.instance.exports['addtwo'];
-            alert(`return value was ${addtwo(3)}`);
+            const add_one = result.instance.exports['add_one'];
+            alert(`return value was ${add_one(3)}`);
           });
         break;
       case 'development':
         loadAdd().then(result => {
-          const addtwo = result.instance.exports['addtwo'];
-          alert(`return value was ${addtwo(2)}`);
+          const add_one = result.instance.exports['add_one'];
+          alert(`return value was ${add_one(2)}`);
         });
         break;
       default:
