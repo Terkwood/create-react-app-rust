@@ -199,7 +199,9 @@ module.exports = function(
 
   const rustUtils = require('./utils/rustUtils');
 
-  if (!rustUtils.isRustInstalled()) {
+  if (rustUtils.isRustInstalled()) {
+    console.log('rust installed 👍');
+  } else {
     console.log(
       chalk.bold.red('rust not installed')
     );
