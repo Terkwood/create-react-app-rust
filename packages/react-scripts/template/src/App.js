@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import loadAdd from './App.rs';
+import { loadWasm } from "./wasmLoader";
 
 class App extends Component {
   constructor() {
     super();
-    switch (process.env.NODE_ENV) {
-      case 'production':
-        fetch('app.wasm')
-          .then(response => response.arrayBuffer())
-          .then(bytes => WebAssembly.instantiate(bytes, {}))
-          .then(result => {
-            const add_one = result.instance.exports['add_one'];
-            alert(`return value was ${add_one(3)}`);
-          });
-        break;
-      case 'development':
-        loadAdd().then(result => {
-          const add_one = result.instance.exports['add_one'];
-          alert(`return value was ${add_one(2)}`);
-        });
-        break;
-      default:
-        break;
-    }
+    loadWasm(result => {
+      const add_one = result.instance.exports['add_one'];
+      alert(`return value was ${add_one(3)}`);
+    });
   }
   render() {
     return (
