@@ -5,7 +5,8 @@ module.exports = {
     // first build app.big.wasm and then optimize to app.wasm with wasm-gc
     try {
       execSync(
-        'rustc +nightly --target wasm32-unknown-unknown -O --crate-type=cdylib src/App.rs -o public/app.wasm'
+        'rustc +nightly --target wasm32-unknown-unknown -O --crate-type=cdylib src/App.rs -o public/app.wasm',
+        { stdio: 'inherit' }
       );
     } catch (error) {}
   },
@@ -19,7 +20,8 @@ module.exports = {
   },
   installRustWebAssemblyTools: () => {
     execSync(
-      'rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly'
+      'rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly',
+      { stdio: 'inherit' }
     );
   },
 };
