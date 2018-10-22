@@ -1,14 +1,26 @@
 const execSync = require('child_process').execSync;
+const chalk = require('chalk');
 
 module.exports = {
   build: () => {
-    // first build app.big.wasm and then optimize to app.wasm with wasm-gc
     try {
+      // first build app.wasm and then optimize with wasm-gc
       execSync(
-        'rustc +nightly --target wasm32-unknown-unknown -O --crate-type=cdylib src/App.rs -o public/app.wasm',
+        'rustc +nightly --target wasm32-unknown-unknown -O --crate-type=cdylib src/App.rs -o build/app.wasm',
         { stdio: 'inherit' }
       );
-    } catch (error) {}
+      try {
+        // check to see if wasm-gc is installed and if not install it
+        execSync('wasm-gc');
+      } catch (err) {
+        execSync('cargo install wasm-gc', { stdio: 'inherit' });
+      } finally {
+        // think of this like running --gc-sections on the app.wasm file
+        execSync('wasm-gc build/app.wasm', { stdio: 'inherit' });
+      }
+    } catch (error) {
+      console.log(chalk.bold.red('error compiling rust'));
+    }
   },
   isRustInstalled: () => {
     try {
