@@ -9,6 +9,12 @@ Please refer to its documentation:
 
 ## Quick Overview
 
+First install Rust if you haven't already
+```sh
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+```
+Then you can run the tool with `npx`
 ```sh
 npx create-react-app my-app --scripts-version react-scripts-rust
 cd my-app
