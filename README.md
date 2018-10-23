@@ -10,6 +10,13 @@ If something doesn’t work, please [file an issue](https://github.com/facebook/
 
 ## Quick Overview
 
+If you haven't already you'll need to install Rust and source it into your current context
+```sh
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+```
+
+Then you can run the tool with `npx`
 ```sh
 npx create-react-app my-app --scripts-version react-scripts-rust
 cd my-app
