@@ -16,7 +16,7 @@ curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 ```
 
-Then you can sacffold the tool without seeing errors:
+Then you can run the tool with `npx`
 ```sh
 npx create-react-app my-app --scripts-version react-scripts-rust
 cd my-app
