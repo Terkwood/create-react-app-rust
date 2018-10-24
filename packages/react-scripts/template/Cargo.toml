@@ -9,3 +9,4 @@ crate-type = ["cdylib"]
 path = "src/App.rs"
 
 [dependencies]
+wasm-gc = "0.1"
