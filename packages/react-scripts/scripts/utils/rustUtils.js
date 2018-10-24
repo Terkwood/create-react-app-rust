@@ -32,7 +32,7 @@ module.exports = {
   },
   installRustWebAssemblyTools: () => {
     execSync(
-      'rustup default nightly && rustup update nightly && rustup target add wasm32-unknown-unknown --toolchain nightly',
+      'rustup target add wasm32-unknown-unknown --toolchain nightly',
       { stdio: 'inherit' }
     );
   },
