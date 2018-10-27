@@ -7,8 +7,9 @@ class App extends Component {
   constructor() {
     super();
     loadWasm(result => {
-      const add_one = result.instance.exports['add_one'];
-      alert(`return value was ${add_one(3)}`);
+      const calculateFactorial = result.instance.exports['fact'];
+      const x = 5;
+      alert(`the factorial of ${ x } is ${ calculateFactorial(x) }`);
     });
   }
   render() {
