@@ -1,6 +1,6 @@
 {
   "name": "react-scripts-rust",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "description": "Configuration and scripts for using Rust with Create React App",
   "repository": "thomashorrobin/create-react-app-rust",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
+    "command-exists": "^1.2.8",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",

@@ -1,5 +1,6 @@
 const execSync = require('child_process').execSync;
 const chalk = require('chalk');
+const commandExistsSync = require('command-exists').sync;
 
 module.exports = {
   build: () => {
@@ -13,19 +14,14 @@ module.exports = {
       console.log(chalk.bold.red('error compiling rust'));
     }
   },
-  isRustInstalled: () => {
-    try {
-      execSync('rustup show');
-      return true;
-    } catch (error) {
-      return false;
-    }
-  },
+  isRustInstalled: () => commandExistsSync('rustup'),
   installRustWebAssemblyTools: () => {
-    try {
-      execSync('cargo install wasm-gc', { stdio: 'inherit' });
-    } catch {
-      console.log(`${chalk.bold.red('error installing wasm-gc')} please install manually ${chalk.red('cargo install wasm-gc')}')`);
+    if (!commandExistsSync('wasm-gc')) {
+      try {
+        execSync('cargo install wasm-gc', { stdio: 'inherit' });
+      } catch {
+        console.log(`${chalk.bold.red('error installing wasm-gc')} please install manually ${chalk.red('cargo install wasm-gc')}')`);
+      }
     }
     execSync(
       'rustup target add wasm32-unknown-unknown --toolchain nightly',
