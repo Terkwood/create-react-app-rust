@@ -1,6 +1,12 @@
-declare module '*.json' {
-  const value: any;
-  export default value;
+/// <reference types="node" />
+/// <reference types="react" />
+/// <reference types="react-dom" />
+
+declare namespace NodeJS {
+  interface ProcessEnv {
+    NODE_ENV: 'development' | 'production' | 'test'
+    PUBLIC_URL: string
+  }
 }
 
 declare module '*.bmp' {
@@ -29,7 +35,7 @@ declare module '*.png' {
 }
 
 declare module '*.svg' {
-  import React = require('react');
+  import * as React from 'react';
 
   export const ReactComponent: React.SFC<React.SVGProps<SVGSVGElement>>;
 
