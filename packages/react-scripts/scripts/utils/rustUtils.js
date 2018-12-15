@@ -21,7 +21,8 @@ module.exports = {
     if (!commandExistsSync('wasm-gc')) {
       try {
         execSync('cargo install wasm-gc', { stdio: 'inherit' });
-      } catch {
+      } catch (e) {
+        console.log(e);
         console.log(`${chalk.bold.red('error installing wasm-gc')} please install manually ${chalk.red('cargo install wasm-gc')}')`);
       }
     }
