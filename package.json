@@ -68,6 +68,7 @@
     "pnp-webpack-plugin": "^1.2.1",
     "postcss-safe-parser": "^4.0.1",
     "typescript": "^3.3.3",
+    "validate-npm-package-name": "^3.0.0",
     "webpack-dev-server": "^3.1.14",
     "webpack-manifest-plugin": "^2.0.4",
     "workbox-webpack-plugin": "^3.6.3"
