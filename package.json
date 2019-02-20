@@ -67,6 +67,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "pnp-webpack-plugin": "^1.2.1",
     "postcss-safe-parser": "^4.0.1",
+    "tar-pack": "^3.4.1",
     "typescript": "^3.3.3",
     "validate-npm-package-name": "^3.0.0",
     "webpack-dev-server": "^3.1.14",
