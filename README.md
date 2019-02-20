@@ -1,11 +1,11 @@
-# Create React App  (Rust) [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
+# create-react-app with support for Rust [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
 
-Create React apps with support for WebAssembly/Rust with no build configuration.
+This project is a fork of Facebook's [create-react-app](https://facebook.github.io/create-react-app/) with support for Rust that compiles to WebAssembly.
 
 - [Creating an App](#creating-an-app) – How to create a new app.
 - [User Guide](https://facebook.github.io/create-react-app/) – How to develop apps bootstrapped with Create React App.
 
-Create React App works on macOS, Windows, and Linux. However Rust tools may behave diferently on Windows in certain cercumstances.
+Create React App works on macOS, Windows, and Linux. However Rust tools may behave diferently on Windows in certain circumstances.
 
 If something doesn’t work, please [file an issue](https://github.com/facebook/create-react-app/issues/new).
 
